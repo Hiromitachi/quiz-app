@@ -39,7 +39,8 @@ fetch(
 
             return formattedQuestion;
         });
-startGame();
+
+        startGame();
     })
     .catch((err) => {
         console.error(err);
@@ -77,7 +78,8 @@ getNewQuestion = () => {
         const number = choice.dataset['number'];
         choice.innerHTML = currentQuestion['choice' + number];
     });
- availableQuesions.splice(questionIndex, 1);
+
+    availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
 
@@ -107,5 +109,5 @@ choices.forEach((choice) => {
 
 incrementScore = (num) => {
     score += num;
-    scoreText.innerText = score;
+    scoreText.innerText = score;
 };
