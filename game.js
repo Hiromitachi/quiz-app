@@ -39,8 +39,7 @@ fetch(
 
             return formattedQuestion;
         });
-
-        startGame();
+startGame();
     })
     .catch((err) => {
         console.error(err);
@@ -63,12 +62,12 @@ getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
         //go to the end page
-        return window.location.assign('/end.html');
+        return window.location.assign('https://hiromitachi.github.io/quiz-app/end.html');
     }
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    progressText.innerText = Question ${questionCounter}/${MAX_QUESTIONS};
     //Update the progress bar
-    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    progressBarFull.style.width = ${(questionCounter / MAX_QUESTIONS) * 100}%;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
@@ -78,8 +77,7 @@ getNewQuestion = () => {
         const number = choice.dataset['number'];
         choice.innerHTML = currentQuestion['choice' + number];
     });
-
-    availableQuesions.splice(questionIndex, 1);
+ availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
 
@@ -109,5 +107,5 @@ choices.forEach((choice) => {
 
 incrementScore = (num) => {
     score += num;
-    scoreText.innerText = score;
+    scoreText.innerText = score;
 };
